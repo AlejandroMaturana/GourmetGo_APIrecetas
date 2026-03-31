@@ -2,15 +2,25 @@
 const searchForm = document.getElementById("search-form");
 const searchInput = document.getElementById("search-input");
 const resultsContainer = document.getElementById("results-container");
+const resultsCount = document.getElementById("results-count");
 
 // Event Listener for Search
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const ingredient = searchInput.value.trim();
+  const ingredient = normalizeInput(searchInput.value);
   if (ingredient) {
     searchRecipes(ingredient);
   }
 });
+
+// Normalizar input (quitar acentos y espacios)
+const normalizeInput = (text) => {
+  return text
+    .trim()
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+};
 
 // Función para buscar recetas
 const searchRecipes = async (ingredient) => {
@@ -38,13 +48,18 @@ const searchRecipes = async (ingredient) => {
     });
     const detailedMeals = await Promise.all(detailedMealsPromises);
     renderRecipes(detailedMeals);
+    
+    // Scroll suave a los resultados
+    resultsContainer.scrollIntoView({ behavior: "smooth", block: "start" });
   } catch (error) {
     console.error("Error fetching recipes:", error);
+    resultsCount.textContent = "";
     resultsContainer.innerHTML = `<p class="text-center text-danger">Ocurrió un error al buscar recetas. Por favor, intenta de nuevo.</p>`;
   }
 };
 
 const renderNoResults = () => {
+  resultsCount.textContent = "0 recetas encontradas";
   resultsContainer.innerHTML = `
       <div class="col-12">
         <p class="text-center fs-4">No se encontraron coincidencias. Intenta con otro ingrediente.</p>
@@ -54,6 +69,7 @@ const renderNoResults = () => {
 
 // Renderizar recetas
 const renderRecipes = (meals) => {
+  resultsCount.textContent = `${meals.length} receta${meals.length !== 1 ? "s" : ""} encontrada${meals.length !== 1 ? "s" : ""}`;
   resultsContainer.innerHTML = "";
   meals.forEach((meal) => {
     const { strMeal, strMealThumb, strInstructions } = meal;
@@ -85,3 +101,21 @@ const renderRecipes = (meals) => {
     resultsContainer.innerHTML += recipeCard;
   });
 };
+
+// Carga inicial de recetas aleatorias
+const loadInitialRecipes = async () => {
+  try {
+    const recipes = [];
+    for (let i = 0; i < 6; i++) {
+      const response = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+      const data = await response.json();
+      if (data.meals) recipes.push(data.meals[0]);
+    }
+    renderRecipes(recipes);
+    resultsCount.textContent = "Sugerencias del día";
+  } catch (error) {
+    console.error("Error loading initial recipes:", error);
+  }
+};
+
+document.addEventListener("DOMContentLoaded", loadInitialRecipes);

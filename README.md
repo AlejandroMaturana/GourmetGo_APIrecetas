@@ -1,69 +1,129 @@
-﻿- **Endpoint para listar todos los ingredientes:** <https://www.themealdb.com/api/json/v1/1/list.php?i=list>
+# 🍳 Buscador de Recetas - Gourmet Go
 
-Al consultar esta dirección, obtendrán un objeto JSON que contiene un array. Cada elemento de ese array es un objeto que representa un ingrediente. La propiedad clave que nos interesa de cada objeto es **strIngredient**. Este es el dato que luego utilizaremos en el endpoint de filtrado para buscar las recetas.
+![Gourmet Go Preview](https://via.placeholder.com/800x400/28a745/ffffff?text=Gourmet+Go+-+Buscador+de+Recetas)
 
-Por ejemplo, un segmento del JSON que devuelve la API se ve así:
-{
-`      `"idIngredient": "47",
-`      `"strIngredient": "Cardamom",
-`      `"strDescription": null,
-`      `"strType": null
-`    `}
+> Una aplicación web moderna que te permite buscar recetas deliciosas por ingrediente utilizando la API de TheMealDB.
 
-Conocer este listado les permitirá entender qué datos son válidos para las búsquedas que implementarán a continuación. Al finalizar este sprint, tendremos un producto mínimo viable (MVP) listo para ser presentado.
+## 📋 Descripción
+
+**Gourmet Go** es una aplicación web interactiva que resuelve el problema común de encontrar recetas cuando solo tienes ciertos ingredientes disponibles. Los usuarios pueden simplemente ingresar un ingrediente en la barra de búsqueda y obtener una lista completa de recetas que incluyen ese ingrediente, junto con imágenes, descripciones e instrucciones detalladas.
+
+### Funcionalidades Principales
+
+- 🔍 **Búsqueda por ingrediente**: Encuentra recetas basadas en los ingredientes que tienes disponibles
+- 🎨 **Interfaz moderna y responsive**: Diseño atractivo que funciona en todos los dispositivos
+- 📱 **Experiencia de usuario fluida**: Búsquedas asíncronas sin recargar la página
+- 🖼️ **Visualización de recetas**: Tarjetas con imágenes y descripciones de cada receta
+- ⚡ **Rendimiento optimizado**: Carga rápida y manejo eficiente de datos de la API
+
+## 🚀 Demo en Vivo
+
+**[Ver Demo en Vivo](https://tu-usuario.github.io/buscador-recetas)** 👈 Actualiza con tu URL
+
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5** - Estructura semántica y accesible
+- **CSS3** - Estilos modernos y responsive design
+- **JavaScript (ES6+)** - Lógica de la aplicación con sintaxis moderna
+- **Bootstrap 5.3.3** - Framework CSS para diseño responsive
+- **TheMealDB API** - API REST para obtener datos de recetas
+- **Fetch API** - Para realizar peticiones HTTP asíncronas
+
+## 📦 Instalación y Uso
+
+### Prerrequisitos
+
+- Un navegador web moderno (Chrome, Firefox, Safari, Edge)
+- Un servidor web local (opcional, puedes abrir el archivo HTML directamente)
+
+### Pasos para ejecutar el proyecto
+
+1. **Clona el repositorio** (o descarga los archivos):
+   ```bash
+   git clone https://github.com/tu-usuario/buscador-recetas.git
+   cd buscador-recetas
+   ```
+
+2. **Abre el proyecto**:
+   - Opción 1: Abre directamente el archivo `index.html` en tu navegador
+   - Opción 2: Usa un servidor local:
+     ```bash
+     # Con Python 3
+     python -m http.server 8000
+     
+     # Con Node.js (http-server)
+     npx http-server
+     
+     # Con PHP
+     php -S localhost:8000
+     ```
+
+3. **Accede a la aplicación**:
+   - Si usaste un servidor local, abre tu navegador en `http://localhost:8000`
+   - Si abriste directamente el HTML, el archivo ya debería estar abierto
+
+4. **¡Listo!** Ahora puedes buscar recetas ingresando cualquier ingrediente en la barra de búsqueda.
+
+### Ejemplo de uso
+
+1. Ingresa un ingrediente en el campo de búsqueda (ej: "chicken", "tomato", "pasta")
+2. Haz clic en "Encontrar preparaciones" o presiona Enter
+3. Explora las recetas que aparecen en la galería
+4. Haz clic en "Ver receta" para más detalles (si está implementado)
+
+## 📁 Estructura del Proyecto
+
+```
+buscador-recetas/
+│
+├── index.html          # Página principal
+├── Assets/
+│   ├── CSS/
+│   │   └── style.css   # Estilos personalizados
+│   ├── JS/
+│   │   └── app.js      # Lógica de la aplicación
+│   └── IMG/
+│       ├── hero.webp   # Imagen del hero
+│       └── st.ico      # Favicon
+└── README.md           # Este archivo
+```
+
+## 🔧 Características Técnicas
+
+- **Búsqueda asíncrona**: Utiliza `async/await` para manejar las peticiones a la API
+- **Manejo de errores**: Gestión adecuada de errores de red y respuestas vacías
+- **Renderizado dinámico**: Generación de tarjetas HTML usando template literals
+- **Responsive design**: Adaptable a diferentes tamaños de pantalla
+- **Optimización de imágenes**: Uso de imágenes WebP para mejor rendimiento
+
+## 📝 Notas Adicionales
+
+- La aplicación utiliza la API pública de [TheMealDB](https://www.themealdb.com/api.php)
+- No se requiere autenticación ni API key para usar esta API
+- Los datos de las recetas son proporcionados por la comunidad de TheMealDB
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Si tienes sugerencias o encuentras algún problema:
+
+1. Abre un issue en el repositorio
+2. Crea un fork del proyecto
+3. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+4. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+5. Push a la rama (`git push origin feature/AmazingFeature`)
+6. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
+
+## 👤 Autor
+
+**Tu Nombre**
+- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
+- Email: tu-email@ejemplo.com
 
 ---
 
-**Historias de Usuario a Implementar**
-
-**HU-04: Búsqueda Funcional de Recetas**
-
-- **Como** usuario,
-- **Quiero** poder escribir un ingrediente en la barra de búsqueda y presionar "Buscar",
-- **Para** obtener una lista de recetas que contengan ese ingrediente.
-
-**Criterios de Aceptación:**
-
-- ✅ Al enviar el formulario de búsqueda (haciendo clic en el botón o presionando Enter), se debe prevenir el comportamiento por defecto de recarga de la página.
-- ✅ Se debe capturar el texto ingresado por el usuario en el campo de búsqueda.
-- ✅ Se debe realizar una llamada asíncrona a la API de TheMealDB usando el ingrediente capturado. El endpoint a utilizar es: https://www.themealdb.com/api/json/v1/1/filter.php?i=[ingrediente\_del\_usuario].
-- ✅ La llamada a la API debe realizarse utilizando la sintaxis moderna fetch con async/await.
-
----
-
-**HU-05: Renderizado Dinámico de Resultados**
-
-- **Como** usuario,
-- **Quiero** que los resultados de mi búsqueda aparezcan en la galería sin que la página se recargue,
-- **Para** tener una experiencia de usuario fluida y rápida.
-
-**Criterios de Aceptación:**
-
-- ✅ Las tarjetas de recetas "hard-codeadas" del index.html deben ser eliminadas. El contenedor de resultados debe estar vacío por defecto.
-- ✅ Por cada receta devuelta por la API, se debe generar dinámicamente una tarjeta HTML y añadirla al DOM.
-- ✅ La estructura HTML de cada tarjeta debe ser generada utilizando **template literals** de ES6+ y debe replicar exactamente el diseño de las tarjetas del Sprint 1 (usando las mismas clases de Bootstrap).
-- ✅ Los datos de la receta (nombre, imagen) deben ser extraídos del objeto de respuesta de la API, preferiblemente usando **desestructuración**.
-- ✅ Al realizar una nueva búsqueda, los resultados anteriores deben ser eliminados del contenedor antes de mostrar los nuevos.
-
----
-
-**HU-06: Manejo de Búsquedas sin Resultados**
-
-- **Como** usuario,
-- **Quiero** recibir un mensaje claro si mi búsqueda no encuentra ninguna receta,
-- **Para** saber que la búsqueda se completó y que debo intentar con otro ingrediente.
-
-**Criterios de Aceptación:**
-
-- ✅ Si la respuesta de la API indica que no se encontraron recetas para un ingrediente (meals es null), el contenedor de resultados debe mostrar un único mensaje informativo, como por ejemplo: "Lo sentimos, no se encontraron recetas. Intenta con otro ingrediente."
-
----
-
-**Requisitos Técnicos y Entregables**
-
-- **Código Fuente:** Todo el código JavaScript debe ser escrito en el archivo app.js.
-- **Sintaxis Moderna (ES6+):** Es mandatorio el uso de let y const para la declaración de variables, arrow functions, template literals y destructuring.
-- **Asincronía:** La gestión de las llamadas a la API debe realizarse con fetch y la sintaxis async/await para un manejo de código limpio y legible.
-- **Manipulación del DOM:** Toda la interacción con el HTML (lectura de inputs, limpieza y renderizado de resultados) debe hacerse a través de los métodos del DOM.
-- **Buenas Prácticas (Opcional pero recomendado):** Considerar el uso de Programación Orientada a Objetos (POO) creando una clase Receta para modelar y estandarizar los datos recibidos de la API antes de renderizarlos.
-- **Entregable:** Un repositorio público de GitHub con el proyecto finalizado y completamente funcional. El enlace al repositorio es el único entregable requerido.
+⭐ Si te gustó este proyecto, ¡no olvides darle una estrella!
