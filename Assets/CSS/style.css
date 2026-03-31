@@ -83,6 +83,60 @@ body {
   background-color: #218838;
 }
 
+/* EFECTOS DE IMAGEN */
+.card-img-hover {
+  transition: transform 0.5s ease;
+}
+
+.recipe-card:hover .card-img-hover {
+  transform: scale(1.1);
+}
+
+/* MODAL STYLES */
+.modal-content {
+  background-color: #373838;
+  color: antiquewhite;
+  border: 1px solid #454747;
+  border-radius: 20px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #454747;
+}
+
+.modal-footer {
+  border-top: 1px solid #454747;
+}
+
+.scrollable-list {
+  scrollbar-width: thin;
+  scrollbar-color: #28a745 #373838;
+}
+
+.scrollable-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+  background-color: #28a745;
+  border-radius: 10px;
+}
+
+/* FUENTES DE MODAL */
+.modal-body .list-group-item {
+  background-color: transparent;
+  color: antiquewhite;
+  border-color: #454747;
+  font-size: 0.85rem; /* Letra levemente menor */
+  padding: 0.5rem 0.75rem;
+}
+
+.recipe-instructions {
+  color: #f8fffe; /* Blanco claro para mejor contraste */
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
 /* Responsividad extra */
 @media (max-width: 576px) {
   .hero {

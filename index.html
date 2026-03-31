@@ -57,6 +57,12 @@
           Descubre deliciosas recetas
         </h2>
         <div id="results-count" class="text-center mb-4 text-secondary"></div>
+        <div id="loading-spinner" class="text-center d-none my-5">
+          <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+          <p class="mt-2">Buscando las mejores recetas...</p>
+        </div>
         <div id="results-container" class="row g-4">
           <!-- Resultados dinámicos aquí -->
         </div>
@@ -69,6 +75,24 @@
         <p class="mb-0">© 2023-2025 Gourmet Go - Recetas para preparar</p>
       </div>
     </footer>
+
+    <!-- Modal de Detalles -->
+    <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="recipeModalLabel">Nombre de la Receta</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-body-content">
+            <!-- Contenido dinámico aquí -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./Assets/JS/app.js"></script>
