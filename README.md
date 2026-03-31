@@ -10,6 +10,8 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-UI-purple?logo=bootstrap&logoColor=white)
 ![API](https://img.shields.io/badge/API-TheMealDB-green)
 
+[Visita la demo de este repositorio](https://alejandromaturana.github.io/GourmetGo_APIrecetas/)
+
 </div>
 
 ---
