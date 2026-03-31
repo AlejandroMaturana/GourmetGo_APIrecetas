@@ -1,129 +1,85 @@
-# 🍳 Buscador de Recetas - Gourmet Go
+# 🍳 Gourmet Go - Buscador de Recetas Inteligente
 
-![Gourmet Go Preview](https://via.placeholder.com/800x400/28a745/ffffff?text=Gourmet+Go+-+Buscador+de+Recetas)
+> Una aplicación web moderna y elegante diseñada para encontrar la receta perfecta utilizando ingredientes a tu disposición. Para este proyecto se ha utilizado la API de [TheMealDB](https://www.themealdb.com/api.php).
 
-> Una aplicación web moderna que te permite buscar recetas deliciosas por ingrediente utilizando la API de TheMealDB.
+<div align="center">
 
-## 📋 Descripción
+![HTML5](https://img.shields.io/badge/HTML5-Markup-34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Styles-1572B6?logo=css3&logoColor=white)
+![JS](https://img.shields.io/badge/ECMAScript6-Logic-yellow?logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-UI-purple?logo=bootstrap&logoColor=white)
+![API](https://img.shields.io/badge/API-TheMealDB-green)
 
-**Gourmet Go** es una aplicación web interactiva que resuelve el problema común de encontrar recetas cuando solo tienes ciertos ingredientes disponibles. Los usuarios pueden simplemente ingresar un ingrediente en la barra de búsqueda y obtener una lista completa de recetas que incluyen ese ingrediente, junto con imágenes, descripciones e instrucciones detalladas.
-
-### Funcionalidades Principales
-
-- 🔍 **Búsqueda por ingrediente**: Encuentra recetas basadas en los ingredientes que tienes disponibles
-- 🎨 **Interfaz moderna y responsive**: Diseño atractivo que funciona en todos los dispositivos
-- 📱 **Experiencia de usuario fluida**: Búsquedas asíncronas sin recargar la página
-- 🖼️ **Visualización de recetas**: Tarjetas con imágenes y descripciones de cada receta
-- ⚡ **Rendimiento optimizado**: Carga rápida y manejo eficiente de datos de la API
-
-## 🚀 Demo en Vivo
-
-**[Ver Demo en Vivo](https://tu-usuario.github.io/buscador-recetas)** 👈 Actualiza con tu URL
-
-## 🛠️ Tecnologías Utilizadas
-
-- **HTML5** - Estructura semántica y accesible
-- **CSS3** - Estilos modernos y responsive design
-- **JavaScript (ES6+)** - Lógica de la aplicación con sintaxis moderna
-- **Bootstrap 5.3.3** - Framework CSS para diseño responsive
-- **TheMealDB API** - API REST para obtener datos de recetas
-- **Fetch API** - Para realizar peticiones HTTP asíncronas
-
-## 📦 Instalación y Uso
-
-### Prerrequisitos
-
-- Un navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Un servidor web local (opcional, puedes abrir el archivo HTML directamente)
-
-### Pasos para ejecutar el proyecto
-
-1. **Clona el repositorio** (o descarga los archivos):
-   ```bash
-   git clone https://github.com/tu-usuario/buscador-recetas.git
-   cd buscador-recetas
-   ```
-
-2. **Abre el proyecto**:
-   - Opción 1: Abre directamente el archivo `index.html` en tu navegador
-   - Opción 2: Usa un servidor local:
-     ```bash
-     # Con Python 3
-     python -m http.server 8000
-     
-     # Con Node.js (http-server)
-     npx http-server
-     
-     # Con PHP
-     php -S localhost:8000
-     ```
-
-3. **Accede a la aplicación**:
-   - Si usaste un servidor local, abre tu navegador en `http://localhost:8000`
-   - Si abriste directamente el HTML, el archivo ya debería estar abierto
-
-4. **¡Listo!** Ahora puedes buscar recetas ingresando cualquier ingrediente en la barra de búsqueda.
-
-### Ejemplo de uso
-
-1. Ingresa un ingrediente en el campo de búsqueda (ej: "chicken", "tomato", "pasta")
-2. Haz clic en "Encontrar preparaciones" o presiona Enter
-3. Explora las recetas que aparecen en la galería
-4. Haz clic en "Ver receta" para más detalles (si está implementado)
-
-## 📁 Estructura del Proyecto
-
-```
-buscador-recetas/
-│
-├── index.html          # Página principal
-├── Assets/
-│   ├── CSS/
-│   │   └── style.css   # Estilos personalizados
-│   ├── JS/
-│   │   └── app.js      # Lógica de la aplicación
-│   └── IMG/
-│       ├── hero.webp   # Imagen del hero
-│       └── st.ico      # Favicon
-└── README.md           # Este archivo
-```
-
-## 🔧 Características Técnicas
-
-- **Búsqueda asíncrona**: Utiliza `async/await` para manejar las peticiones a la API
-- **Manejo de errores**: Gestión adecuada de errores de red y respuestas vacías
-- **Renderizado dinámico**: Generación de tarjetas HTML usando template literals
-- **Responsive design**: Adaptable a diferentes tamaños de pantalla
-- **Optimización de imágenes**: Uso de imágenes WebP para mejor rendimiento
-
-## 📝 Notas Adicionales
-
-- La aplicación utiliza la API pública de [TheMealDB](https://www.themealdb.com/api.php)
-- No se requiere autenticación ni API key para usar esta API
-- Los datos de las recetas son proporcionados por la comunidad de TheMealDB
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Si tienes sugerencias o encuentras algún problema:
-
-1. Abre un issue en el repositorio
-2. Crea un fork del proyecto
-3. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-4. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-5. Push a la rama (`git push origin feature/AmazingFeature`)
-6. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
-
-## 👤 Autor
-
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- Email: tu-email@ejemplo.com
+</div>
 
 ---
 
-⭐ Si te gustó este proyecto, ¡no olvides darle una estrella!
+## 🌟 Características Estrella
+
+Gourmet Go no es solo un buscador; es un ejercicio de **desarrollo full stack** que incorpora:
+
+- 🧠 **Traducción Inteligente (ES→EN)**: Sistema integrado de diccionario para que busques en español ("ajo", "pollo", "zanahoria") y la app traduzca dinámicamente antes de consultar la API.
+- 🖼️ **Experiencia Visual Premium**: Galería dinámica con efectos de _zoom_ interactivo y carga optimizada por lotes.
+- 🧪 **Lógica Asíncrona Robusta**: Manejo de concurrencia mediante `Promise.all` para la carga inicial de sugerencias y gestión de estados de espera (_spinners_).
+- 📱 **Detalle en Modal**: Despliegue de información completa (ingredientes, medidas exactas e instrucciones) sin perder el contexto de la búsqueda principal.
+- 🧹 **Normalización de Texto**: Limpieza de acentos y espacios mediante expresiones regulares y normalización Unicode.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+La arquitectura está construida sobre bases modernas para garantizar rendimiento y mantenibilidad:
+
+- **Lógica**: JavaScript (ES6+) con un enfoque modular.
+- **Estilos**: CSS3 Moderno (Variables, Animaciones y Grid/Flexbox) + Bootstrap 5.3.
+- **Fuentes**: Google Fonts (Poppins) para una tipografía impecable.
+- **Consumo de Datos**: Fetch API para comunicación con RESTful API.
+
+---
+
+## 🚀 Instalación y Uso
+
+### Prerrequisitos
+
+Un navegador web moderno es todo lo que necesitas.
+
+### Pasos
+
+1. **Clona el proyecto**:
+   ```bash
+   git clone https://github.com/AlejandroMaturana/GourmetGo_APIrecetas.git
+   ```
+2. **Ejecuta la App**:
+   Simplemente abre `index.html` en tu navegador favorito.
+3. **Usa el Buscador**:
+   Ingresa un ingrediente (ej: "pollo" o "ajo") y disfruta de las sugerencias culinarias.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```text
+GourmetGo_APIrecetas/
+│
+├── index.html          # Punto de entrada / Estructura Semántica
+├── Assets/
+│   ├── CSS/
+│   │   └── style.css   # Sistema de diseño y animaciones
+│   ├── JS/
+│   │   └── app.js      # Lógica de negocio y traducción
+│   └── IMG/            # Assets estáticos (Hero + ícono)
+└── README.md           # Usted está leyendo acá
+```
+
+---
+
+## 👤 Autor
+
+**ManuGL como Alejandro Maturana en la web**
+
+- GitHub: [AlejandroMaturana](https://github.com/AlejandroMaturana)
+- LinkedIn: [Perfil Professional](https://www.linkedin.com/in/manuel-a-gonzalez-lozano-bb23a5242)
+
+---
+
+> ⭐ Si este proyecto te resultó útil para aprender o inspirarte, ¡no olvides darle una estrella al repositorio!
