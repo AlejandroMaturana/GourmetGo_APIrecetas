@@ -8,6 +8,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-Styles-1572B6?logo=css3&logoColor=white)
 ![JS](https://img.shields.io/badge/ECMAScript6-Logic-yellow?logo=javascript&logoColor=black)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-UI-purple?logo=bootstrap&logoColor=white)
+![JSON](https://img.shields.io/badge/JSON-Data-lightgrey?logo=json&logoColor=white)
 ![API](https://img.shields.io/badge/API-TheMealDB-green)
 
 </div>
@@ -18,11 +19,12 @@
 
 Gourmet Go no es solo un buscador; es un ejercicio de **desarrollo full stack** que incorpora:
 
-- 🧠 **Traducción Inteligente (ES→EN)**: Sistema integrado de diccionario para que busques en español ("ajo", "pollo", "zanahoria") y la app traduzca dinámicamente antes de consultar la API.
+- 🧠 **Traducción Dinámica (ES→EN)**: Diccionario externalizado en JSON con carga asíncrona. Busca en español ("ajo", "pollo", "zanahoria") y la app traduce automáticamente antes de consultar la API.
 - 🖼️ **Experiencia Visual Premium**: Galería dinámica con efectos de _zoom_ interactivo y carga optimizada por lotes.
 - 🧪 **Lógica Asíncrona Robusta**: Manejo de concurrencia mediante `Promise.all` para la carga inicial de sugerencias y gestión de estados de espera (_spinners_).
 - 📱 **Detalle en Modal**: Despliegue de información completa (ingredientes, medidas exactas e instrucciones) sin perder el contexto de la búsqueda principal.
 - 🧹 **Normalización de Texto**: Limpieza de acentos y espacios mediante expresiones regulares y normalización Unicode.
+- 🏗️ **Arquitectura Modular**: Separación clara entre datos (JSON) y lógica (JavaScript) para mejor mantenibilidad y escalabilidad.
 
 ---
 
@@ -30,10 +32,11 @@ Gourmet Go no es solo un buscador; es un ejercicio de **desarrollo full stack** 
 
 La arquitectura está construida sobre bases modernas para garantizar rendimiento y mantenibilidad:
 
-- **Lógica**: JavaScript (ES6+) con un enfoque modular.
+- **Lógica**: JavaScript (ES6+) con un enfoque funcional y modular.
 - **Estilos**: CSS3 Moderno (Variables, Animaciones y Grid/Flexbox) + Bootstrap 5.3.
+- **Datos**: JSON estructurado con carga dinámica mediante Fetch API.
 - **Fuentes**: Google Fonts (Poppins) para una tipografía impecable.
-- **Consumo de Datos**: Fetch API para comunicación con RESTful API.
+- **Consumo de Datos**: Fetch API para comunicación bidireccional con RESTful API y recursos locales.
 
 ---
 
@@ -61,14 +64,16 @@ Un navegador web moderno es todo lo que necesitas.
 ```text
 GourmetGo_APIrecetas/
 │
-├── index.html          # Punto de entrada / Estructura Semántica
+├── index.html              # Punto de entrada / Estructura Semántica
 ├── Assets/
 │   ├── CSS/
-│   │   └── style.css   # Sistema de diseño y animaciones
+│   │   └── style.css       # Sistema de diseño y animaciones
 │   ├── JS/
-│   │   └── app.js      # Lógica de negocio y traducción
-│   └── IMG/            # Assets estáticos (Hero + ícono)
-└── README.md           # Usted está leyendo acá
+│   │   └── app.js          # Lógica de negocio y traducción dinámicas
+│   ├── docs/
+│   │   └── dictionary.json # Diccionario categorizado (ES→EN)
+│   └── IMG/                # Assets estáticos (Hero + iconos)
+└── README.md               # Usted está leyendo acá
 ```
 
 ---
