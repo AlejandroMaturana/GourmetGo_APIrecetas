@@ -22,14 +22,14 @@
             Gourmet Go
           </h1>
           <p class="fs-4 text-white mb-4">
-            Tu receta ideal a un click de distancia
+            Your ideal recipe just a click away
           </p>
 
           <form id="search-form" class="search-form d-flex flex-column flex-md-row justify-content-center gap-3">
             <input id="search-input" type="text" class="form-control form-control-lg"
-              placeholder="Ej: busca por ingrediente..." aria-label="Buscar recetas" />
+              placeholder="Search by ingredient..." aria-label="Search recipes" />
             <button type="submit" class="btn btn-success btn-lg px-5">
-              Encontrar preparaciones
+              Find recipes
             </button>
           </form>
         </div>
@@ -41,14 +41,14 @@
   <section class="py-5">
     <div class="container">
       <h2 id="seccionR" class="text-center my-5 fw-bold">
-        Descubre deliciosas recetas
+        Discover delicious recipes
       </h2>
       <div id="results-count" class="text-center mb-4 text-secondary"></div>
       <div id="loading-spinner" class="text-center d-none my-5">
         <div class="spinner-border text-success" role="status">
-          <span class="visually-hidden">Cargando...</span>
+          <span class="visually-hidden">Loading...</span>
         </div>
-        <p class="mt-2">Buscando las mejores recetas...</p>
+        <p class="mt-2">Searching for the best recipes...</p>
       </div>
       <div id="results-container" class="row g-4">
         <!-- Resultados dinámicos aquí -->
@@ -59,7 +59,7 @@
   <!-- Footer -->
   <footer class="bg-dark text-white py-4 mt-5">
     <div class="container text-center">
-      <p class="mb-0">© 2023-2025 Gourmet Go - Recetas para preparar</p>
+      <p class="mb-0">© 2023-2025 Gourmet Go - Recipes to prepare</p>
     </div>
   </footer>
 
@@ -68,14 +68,14 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header bg-success text-white">
-          <h5 class="modal-title" id="recipeModalLabel">Nombre de la Receta</h5>
+          <h5 class="modal-title" id="recipeModalLabel">Recipe Name</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="modal-body-content">
           <!-- Contenido dinámico aquí -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
