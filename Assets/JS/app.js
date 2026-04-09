@@ -15,191 +15,25 @@ if (recipeModalElement) {
 }
 
 // Diccionario de Traduccion (Espanol -> Ingles)
-const searchDictionary = {
-  // Proteinas
-  pollo: "chicken",
-  carne: "beef",
-  res: "beef",
-  cerdo: "pork",
-  pescado: "fish",
-  salmon: "salmon",
-  atun: "tuna",
-  tilapia: "tilapia",
-  bacalao: "cod",
-  mariscos: "seafood",
-  huevo: "egg",
-  huevos: "egg",
-  cordero: "lamb",
-  pavo: "turkey",
-  pato: "duck",
-  jamon: "ham",
-  tocino: "bacon",
-  bacon: "bacon",
-  chorizo: "sausage",
-  salchicha: "sausage",
-  camaron: "shrimp",
-  camarones: "shrimp",
-  langosta: "lobster",
-  mejillon: "mussel",
-  mejillones: "mussel",
-  almeja: "clam",
-  almejas: "clam",
-  calamar: "squid",
-  pulpo: "octopus",
-  tofu: "tofu",
-  tempe: "tempeh",
-  seitan: "seitan",
+// Se carga desde Assets/docs/dictionary.json
+let searchDictionary = {};
 
-  // Vegetales
-  tomate: "tomato",
-  ajo: "garlic",
-  cebolla: "onion",
-  papa: "potato",
-  patata: "potato",
-  camote: "sweet potato",
-  zanahoria: "carrot",
-  brocoli: "broccoli",
-  coliflor: "cauliflower",
-  espinaca: "spinach",
-  lechuga: "lettuce",
-  repollo: "cabbage",
-  col: "cabbage",
-  pepino: "cucumber",
-  calabaza: "pumpkin",
-  calabacin: "zucchini",
-  berenjena: "eggplant",
-  champinon: "mushroom",
-  hongo: "mushroom",
-  seta: "mushroom",
-  apio: "celery",
-  esparrago: "asparagus",
-  puerro: "leek",
-  alcachofa: "artichoke",
-  arveja: "pea",
-  guisante: "pea",
-  ejote: "green bean",
-  habichuela: "green bean",
-  judia: "green bean",
-  haba: "fava bean",
-  maiz: "corn",
-  chile: "chili",
-  pimiento: "pepper",
-  jalapeno: "jalapeno",
-  remolacha: "beet",
-  betarraga: "beet",
-  nabo: "turnip",
-  rabano: "radish",
-  cebollin: "chive",
-  kale: "kale",
-
-  // Frutas
-  manzana: "apple",
-  platano: "banana",
-  banana: "banana",
-  limon: "lemon",
-  lima: "lime",
-  naranja: "orange",
-  mandarina: "mandarin",
-  toronja: "grapefruit",
-  pomelo: "grapefruit",
-  fresa: "strawberry",
-  frambuesa: "raspberry",
-  arandano: "blueberry",
-  mora: "blackberry",
-  uva: "grape",
-  pina: "pineapple",
-  mango: "mango",
-  melon: "melon",
-  sandia: "watermelon",
-  papaya: "papaya",
-  kiwi: "kiwi",
-  pera: "pear",
-  durazno: "peach",
-  melocoton: "peach",
-  ciruela: "plum",
-  cereza: "cherry",
-  higo: "fig",
-  granada: "pomegranate",
-  maracuya: "passion fruit",
-  guayaba: "guava",
-  coco: "coconut",
-  palta: "avocado",
-  aguacate: "avocado",
-
-  // Hierbas y especias
-  cilantro: "cilantro",
-  perejil: "parsley",
-  albahaca: "basil",
-  oregano: "oregano",
-  tomillo: "thyme",
-  romero: "rosemary",
-  laurel: "bay leaf",
-  salvia: "sage",
-  hierbabuena: "mint",
-  menta: "mint",
-  jengibre: "ginger",
-  curcuma: "turmeric",
-  comino: "cumin",
-  pimienta: "pepper",
-  pimenton: "paprika",
-  canela: "cinnamon",
-  vainilla: "vanilla",
-
-  // Otros / Carbohidratos
-  arroz: "rice",
-  pasta: "pasta",
-  pan: "bread",
-  tortilla: "tortilla",
-  harina: "flour",
-  avena: "oats",
-  quinoa: "quinoa",
-  cuscus: "couscous",
-  polenta: "polenta",
-  masa: "dough",
-  leche: "milk",
-  yogur: "yogurt",
-  yogurt: "yogurt",
-  queso: "cheese",
-  mantequilla: "butter",
-  crema: "cream",
-  nata: "cream",
-  aceite: "oil",
-  azucar: "sugar",
-  miel: "honey",
-  sal: "salt",
-  vinagre: "vinegar",
-  mostaza: "mustard",
-  mayonesa: "mayonnaise",
-  ketchup: "ketchup",
-  salsa: "sauce",
-  soya: "soy",
-  salsa_soya: "soy sauce",
-  chocolate: "chocolate",
-  cacao: "cocoa",
-  cafe: "coffee",
-  te: "tea",
-  garbanzo: "chickpea",
-  garbanzos: "chickpea",
-  lenteja: "lentil",
-  lentejas: "lentil",
-  frijol: "bean",
-  frijoles: "bean",
-  poroto: "bean",
-  porotos: "bean",
-  alubia: "bean",
-  edamame: "edamame",
-  nuez: "walnut",
-  nueces: "walnut",
-  almendra: "almond",
-  almendras: "almond",
-  mani: "peanut",
-  cacahuate: "peanut",
-  pistacho: "pistachio",
-  avellana: "hazelnut",
-  anacardo: "cashew",
-  semilla: "seed",
-  semillas: "seeds",
-  agua: "water",
+// Función para cargar el diccionario desde JSON
+const loadDictionary = async () => {
+  try {
+    const response = await fetch("./Assets/docs/dictionary.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    // Aplanar la estructura JSON categorizada en un objeto plano
+    Object.values(data).forEach((category) => {
+      Object.assign(searchDictionary, category);
+    });
+    console.log("Diccionario cargado correctamente");
+  } catch (error) {
+    console.error("Error cargando el diccionario:", error);
+  }
 };
 
 // Event Listener for Search
@@ -394,6 +228,9 @@ const openRecipeModal = async (id) => {
 // Carga inicial de recetas aleatorias
 const loadInitialRecipes = async () => {
   try {
+    // Cargar diccionario primero
+    await loadDictionary();
+    
     showLoading();
     const recipes = [];
     // Hacemos 6 peticiones en paralelo para mayor velocidad
